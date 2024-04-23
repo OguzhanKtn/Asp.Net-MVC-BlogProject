@@ -10,3 +10,15 @@ C:\Users\Oğuzhan\source\repos\MvcProjectCamp\EntityLayer\obj\Debug\EntityLayer.
 C:\Users\Oğuzhan\source\repos\MvcProjectCamp\EntityLayer\obj\Debug\EntityLayer.csproj.CopyComplete
 C:\Users\Oğuzhan\source\repos\MvcProjectCamp\EntityLayer\obj\Debug\EntityLayer.dll
 C:\Users\Oğuzhan\source\repos\MvcProjectCamp\EntityLayer\obj\Debug\EntityLayer.pdb
+C:\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\bin\Debug\EntityLayer.dll.config
+C:\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\bin\Debug\EntityLayer.dll
+C:\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\bin\Debug\EntityLayer.pdb
+C:\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\bin\Debug\EntityFramework.dll
+C:\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\bin\Debug\EntityFramework.xml
+C:\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\obj\Debug\EntityLayer.csproj.AssemblyReference.cache
+C:\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\obj\Debug\EntityLayer.csproj.CoreCompileInputs.cache
+C:\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\obj\Debug\EntityLayer.csproj.CopyComplete
+C:\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\obj\Debug\EntityLayer.dll
+C:\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\obj\Debug\EntityLayer.pdb

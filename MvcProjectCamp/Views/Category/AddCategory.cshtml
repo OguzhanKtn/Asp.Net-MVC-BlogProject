@@ -1,0 +1,17 @@
+﻿
+@{
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<h1>Add Category</h1>
+<br />
+<form class="form-group" method="post">
+    @Html.Label("Category Name")
+    <input type="text" class="form-control" name="CategoryName" />
+    <br />
+    @Html.Label("Category Desciption")
+    <input type="text" class="form-control" name="CategoryDescription" />
+    <br />
+    <button class="btn btn-primary">Save</button>
+</form>

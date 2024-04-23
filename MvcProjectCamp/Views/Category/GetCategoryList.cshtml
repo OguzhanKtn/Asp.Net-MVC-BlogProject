@@ -7,19 +7,22 @@
 
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 
+
 <table class="table table-bordered">
     <tr>
         <th>ID</th>
         <th>Ad</th>
         <th>Durum</th>
     </tr>
-        @foreach(var item in Model)
-        {
-            <tr>
-                <td>@item.CategoryID</td>
-                <td>@item.CategoryName</td>
-                <td>@item.CategoryStatus</td>
-            </tr>
-        }
-    
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CategoryID</td>
+            <td>@item.CategoryName</td>
+            <td>@item.CategoryStatus</td>
+        </tr>
+    }
+
 </table>
+<br />
+<a href="/Category/AddCategory" class="btn btn-info">Add Category</a>
