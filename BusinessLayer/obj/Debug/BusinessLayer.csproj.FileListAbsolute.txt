@@ -40,3 +40,9 @@ C:\GitHub\Asp.Net-MVC-BlogProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.C
 C:\GitHub\Asp.Net-MVC-BlogProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
 C:\GitHub\Asp.Net-MVC-BlogProject\BusinessLayer\obj\Debug\BusinessLayer.dll
 C:\GitHub\Asp.Net-MVC-BlogProject\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\BusinessLayer\bin\Debug\FluentValidation.dll
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\BusinessLayer\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\BusinessLayer\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\BusinessLayer\bin\Debug\FluentValidation.xml
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\BusinessLayer\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\BusinessLayer\bin\Debug\System.Threading.Tasks.Extensions.xml
