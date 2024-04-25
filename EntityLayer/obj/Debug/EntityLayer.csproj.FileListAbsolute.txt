@@ -22,3 +22,15 @@ C:\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\obj\Debug\EntityLayer.csproj.CoreC
 C:\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\obj\Debug\EntityLayer.csproj.CopyComplete
 C:\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\obj\Debug\EntityLayer.dll
 C:\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\obj\Debug\EntityLayer.pdb
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\bin\Debug\EntityLayer.dll.config
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\bin\Debug\EntityLayer.dll
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\bin\Debug\EntityLayer.pdb
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\bin\Debug\EntityFramework.dll
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\bin\Debug\EntityFramework.xml
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\obj\Debug\EntityLayer.csproj.AssemblyReference.cache
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\obj\Debug\EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\obj\Debug\EntityLayer.csproj.CopyComplete
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\obj\Debug\EntityLayer.dll
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\EntityLayer\obj\Debug\EntityLayer.pdb
