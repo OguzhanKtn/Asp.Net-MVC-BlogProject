@@ -49,3 +49,4 @@ C:\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.cspr
 C:\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
 C:\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.WriterAboutColumnAdded.resources

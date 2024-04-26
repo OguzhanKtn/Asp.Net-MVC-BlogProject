@@ -30,17 +30,17 @@ namespace BusinessLayer.Concrete
 
         public void WriterAdd(Writer writer)
         {
-            throw new NotImplementedException();
+            _writerDal.Insert(writer);
         }
 
         public void WriterDelete(Writer writer)
         {
-            throw new NotImplementedException();
+            _writerDal.Delete(writer);
         }
 
         public void WriterUpdate(Writer writer)
         {
-            throw new NotImplementedException();
+            _writerDal.Update(writer);
         }
     }
 }
