@@ -46,3 +46,9 @@ C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\BusinessLayer\bin\Deb
 C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\BusinessLayer\bin\Debug\FluentValidation.xml
 C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\BusinessLayer\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\BusinessLayer\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\GitHub\Asp.Net-MVC-BlogProject\BusinessLayer\bin\Debug\FluentValidation.dll
+C:\GitHub\Asp.Net-MVC-BlogProject\BusinessLayer\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\GitHub\Asp.Net-MVC-BlogProject\BusinessLayer\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\GitHub\Asp.Net-MVC-BlogProject\BusinessLayer\bin\Debug\FluentValidation.xml
+C:\GitHub\Asp.Net-MVC-BlogProject\BusinessLayer\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\GitHub\Asp.Net-MVC-BlogProject\BusinessLayer\bin\Debug\System.Threading.Tasks.Extensions.xml

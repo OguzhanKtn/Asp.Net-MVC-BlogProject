@@ -188,3 +188,9 @@ C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\Sy
 C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\FluentValidation.xml
 C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\System.Threading.Tasks.Extensions.xml
+C:\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\FluentValidation.dll
+C:\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\System.Threading.Tasks.Extensions.dll
+C:\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\FluentValidation.xml
+C:\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\System.Threading.Tasks.Extensions.xml
