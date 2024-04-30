@@ -20,6 +20,7 @@ namespace BusinessLayer.ValidationRules
             RuleFor(x => x.WriterMail).NotEmpty().WithMessage("Please enter your email adress!");
             RuleFor(x => x.WriterPassword).MinimumLength(8).WithMessage("Your password must consist of at least 8 characters!");
             RuleFor(x => x.WriterPassword).NotEmpty().WithMessage("You must enter a password !");
+            RuleFor(x => x.WriterTitle).NotEmpty().WithMessage("Writer's title cannot be blank ! ");
         }
     }
 }

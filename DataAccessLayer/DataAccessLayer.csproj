@@ -74,6 +74,10 @@
     <Compile Include="Migrations\202404261427339_WriterAboutColumnAdded.designer.cs">
       <DependentUpon>202404261427339_WriterAboutColumnAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202404300647369_WriterTitleColumnAdded.cs" />
+    <Compile Include="Migrations\202404300647369_WriterTitleColumnAdded.designer.cs">
+      <DependentUpon>202404300647369_WriterTitleColumnAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -93,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202404261427339_WriterAboutColumnAdded.resx">
       <DependentUpon>202404261427339_WriterAboutColumnAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404300647369_WriterTitleColumnAdded.resx">
+      <DependentUpon>202404300647369_WriterTitleColumnAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
