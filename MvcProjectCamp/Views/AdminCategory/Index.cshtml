@@ -4,6 +4,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+@{int count = 0; }
 <br />
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 
@@ -16,10 +17,10 @@
         <th>Update</th>
         <th>Titles</th>
     </tr>
-    @foreach (var item in Model)
+    @foreach(var item in Model)
     {
         <tr>
-            <th>@item.CategoryID</th>
+            <th>@(count+=1)</th>
             <td>@item.CategoryName</td>
             <td>
                 <a href="/AdminCategory/DeleteCategory/@item.CategoryID" class="btn btn-danger">Delete</a>
@@ -28,7 +29,7 @@
                 <a href="/AdminCategory/UpdateCategory/@item.CategoryID" class="btn btn-success">Update</a>
             </td>
             <td>
-                <a href="" class="btn btn-primary">Titles</a>
+                <a href="/AdminCategory/Titles/@item.CategoryID" class="btn btn-primary">Titles</a>
             </td>
         </tr>
     }

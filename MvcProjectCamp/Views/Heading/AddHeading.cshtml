@@ -15,10 +15,10 @@
         @Html.TextBoxFor(x => x.HeadingName, new { @class = "form-control" })
         <br />
         @Html.Label("Category")
-        @Html.TextBoxFor(x => x.CategoryID, new { @class = "form-control" })
+        @Html.DropDownListFor(x => x.CategoryID,(List<SelectListItem>) ViewBag.vlc, new {@class="form-control"})
         <br />
         @Html.Label("Writer")
-        @Html.TextBoxFor(x => x.WriterID, new { @class = "form-control" })
+        @Html.DropDownListFor(x => x.WriterID,(List<SelectListItem>) ViewBag.writer, new {@class="form-control"})
         <br />
         <button class="btn btn-info">Add Title</button>
     </div>

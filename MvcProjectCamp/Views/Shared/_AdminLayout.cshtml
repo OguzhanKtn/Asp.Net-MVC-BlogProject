@@ -62,8 +62,8 @@ to get the desired effect
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                              with font-awesome or any other icon font library -->
-                        <li class="nav-item has-treeview menu-open">
-                            <a href="#" class="nav-link active">
+                        <li class="nav-item has-treeview">
+                            <a href="/AdminCategory" class="nav-link">
                                 <i class="nav-icon fas fa-list"></i>
                                 <p>
                                     Categories
@@ -71,7 +71,7 @@ to get the desired effect
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
+                            <a href="/Heading" class="nav-link">
                                 <i class="nav-icon fas fa-heading"></i>
                                 <p>
                                     Titles
@@ -79,7 +79,7 @@ to get the desired effect
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="/Writer" class="nav-link">
                                 <i class="nav-icon fas fa-pen"></i>
                                 <p>
                                     Writers
@@ -116,7 +116,7 @@ to get the desired effect
                             </ul>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="/About" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     About us
@@ -124,7 +124,7 @@ to get the desired effect
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="/Contact" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
                                     Communication & Messages
@@ -132,7 +132,7 @@ to get the desired effect
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="/Contents" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
                                     Contents
@@ -197,6 +197,28 @@ to get the desired effect
             <!-- /.content -->
         </div>
     </div>
+
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+        const currentPath = window.location.pathname;
+
+        if (currentPath) {
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+
+                navLinks.forEach(l => l.classList.remove('active'))
+
+                this.classList.add('active');
+                window.location.href = this.getAttribute('href');
+            })
+        })
+    </script>
     <!-- ./wrapper -->
     <!-- REQUIRED SCRIPTS -->
     <!-- jQuery -->

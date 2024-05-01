@@ -1,0 +1,27 @@
+﻿@using EntityLayer.Concrete
+@model List<Heading>
+@{
+    ViewBag.Title = "Titles";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@{int count = 0;}
+<h2>Titles</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <th>#</th>
+        <th>Title Name</th>
+        <th>Writer</th>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@(count+=1)</td>
+                    <td>@item.HeadingName</td>
+                    <td>@(item.Writer.WriterName+" "+item.Writer.WriterSurname)</td>
+                </tr>
+            }
+    </tbody>
+</table>
+

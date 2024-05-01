@@ -11,17 +11,19 @@ namespace MvcProjectCamp.Controllers
 {
     public class HeadingController : Controller
     {
-        HeadingManager manager;
+        HeadingManager headingManager;
         CategoryManager categoryManager;
+        WriterManager writerManager;
         public HeadingController()
         {
-            manager = new HeadingManager(new EfHeadingDal());
+            headingManager = new HeadingManager(new EfHeadingDal());
             categoryManager = new CategoryManager(new EfCategoryDal());
+            writerManager = new WriterManager(new EfWriterDal());
         }
 
         public ActionResult Index()
         {
-            var headings = manager.GetAll();
+            var headings = headingManager.GetAll();
             return View(headings);
         }
 
@@ -35,6 +37,15 @@ namespace MvcProjectCamp.Controllers
                                                       Value = x.CategoryID.ToString()
                                                   }
                                                   ).ToList();
+            List<SelectListItem> valueCategory2 = (from x in writerManager.GetList()
+                                                   select new SelectListItem
+                                                   {
+                                                       Text = x.WriterName +" "+ x.WriterSurname,
+                                                       Value = x.WriterID.ToString()
+                                                   }
+                                                   ).ToList();   
+            ViewBag.vlc = valueCategory;
+            ViewBag.writer = valueCategory2;
             return View();
         }
 
@@ -42,8 +53,13 @@ namespace MvcProjectCamp.Controllers
         public ActionResult AddHeading(Heading p) 
         {
             p.HeadingDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-            manager.Add(p);
+            headingManager.Add(p);
             return RedirectToAction("Index");
+        }
+
+        public ActionResult ContentByHeading(int id)
+        {
+            return View();
         }
     }
 }

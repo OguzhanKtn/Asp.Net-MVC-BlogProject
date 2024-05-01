@@ -3,6 +3,8 @@ using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace MvcProjectCamp.Controllers
@@ -10,9 +12,11 @@ namespace MvcProjectCamp.Controllers
     public class AdminCategoryController : Controller
     {
         CategoryManager categoryManager;
+        HeadingManager headingManager;
         public AdminCategoryController()
         {
             categoryManager = new CategoryManager(new EfCategoryDal());
+            headingManager = new HeadingManager(new EfHeadingDal());
         }
 
         public ActionResult Index()
@@ -64,6 +68,19 @@ namespace MvcProjectCamp.Controllers
         {
             categoryManager.Update(category);
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Titles(int id)
+        {
+            List<Heading> headingList = new List<Heading>();
+            foreach (var item in headingManager.GetAll())
+            {
+                if(item.CategoryID == id)
+                {
+                    headingList.Add(item);
+                }
+            }
+            return View(headingList);
         }
     }
 }
