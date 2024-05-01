@@ -56,10 +56,5 @@ namespace MvcProjectCamp.Controllers
             headingManager.Add(p);
             return RedirectToAction("Index");
         }
-
-        public ActionResult ContentByHeading(int id)
-        {
-            return View();
-        }
     }
 }
