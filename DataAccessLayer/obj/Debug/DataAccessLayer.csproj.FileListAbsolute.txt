@@ -57,3 +57,7 @@ C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\D
 C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.ContentStatusColumnAdded.resources
 C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.HeadingStatusAdded.resources
 C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.allStatusMadeTrue.resources
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.date.resources
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.date1.resources
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.date2.resources
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.date3.resources

@@ -9,8 +9,14 @@
 @using(Html.BeginForm("EditHeading","Heading",FormMethod.Post))
 {
     <div class="form-group">
+        @Html.Label("Title ID")
+        @Html.TextBoxFor(x => x.HeadingID, new { @class = "form-control" })
+        <br />
         @Html.Label("Title Name")
         @Html.TextBoxFor(x => x.HeadingName, new { @class = "form-control" })
+        <br />
+        @Html.Label("Writer")
+        @Html.TextBoxFor(x => x.WriterID, new { @class = "form-control" })
         <br />
         @Html.Label("Category")
         @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })

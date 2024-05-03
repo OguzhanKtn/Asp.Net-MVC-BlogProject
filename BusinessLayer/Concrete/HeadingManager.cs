@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
+using System;
 using System.Collections.Generic;
 
 namespace BusinessLayer.Concrete
@@ -35,7 +36,18 @@ namespace BusinessLayer.Concrete
 
         public void Update(Heading heading)
         {
-            _headingDal.Update(heading);
+            var _heading = _headingDal.Get(x => x.HeadingID == heading.HeadingID);
+
+            _heading.UpdatedDate = DateTime.Now;
+            _heading.HeadingName = heading.HeadingName;
+            _heading.HeadingStatus = heading.HeadingStatus;
+            _heading.Category = heading.Category;
+            _heading.CategoryID = heading.CategoryID;
+            _heading.Contents = heading.Contents;
+            _heading.Writer = heading.Writer;
+            _heading.WriterID = heading.WriterID;
+
+            _headingDal.Update(_heading);
         }
     }
 }

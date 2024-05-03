@@ -52,7 +52,7 @@ namespace MvcProjectCamp.Controllers
         [HttpPost]
         public ActionResult AddHeading(Heading p) 
         {
-            p.HeadingDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+            p.CreatedDate = DateTime.Now; 
             headingManager.Add(p);
             return RedirectToAction("Index");
         }
@@ -74,7 +74,7 @@ namespace MvcProjectCamp.Controllers
 
         [HttpPost]
         public ActionResult EditHeading(Heading p) 
-        { 
+        {
             headingManager.Update(p);
             return RedirectToAction("Index");
         }
