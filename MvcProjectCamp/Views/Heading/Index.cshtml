@@ -6,6 +6,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 @{string color = "";}
+@{string statusColor = ""; }
 @{int count = 0; }
 
 <!DOCTYPE html>
@@ -35,14 +36,17 @@
                                     <th style="width: 5%">
                                         #
                                     </th>
-                                    <th style="width: 25%">
+                                    <th style="width: 15%">
                                         Title Name
                                     </th>
                                     <th style="width: 1%;">
                                         Writer
                                     </th>
-                                    <th style="width: 45%" class="text-center">
+                                    <th style="width: 20%" class="text-center">
                                         Category
+                                    </th>
+                                    <th style="width: 1%;">
+                                        Status
                                     </th>
                                     <th style="width: 20%">
                                     </th>
@@ -75,6 +79,14 @@
                                     {
                                         color = "badge badge-primary";
                                     }
+                                    if(item.HeadingStatus == false)
+                                    {
+                                        statusColor = "badge badge-danger";
+                                    }
+                                    else if (item.HeadingStatus == true)
+                                    {
+                                        statusColor = "badge badge-success";
+                                    }
                                 <tr>
                                     <th>
                                         @(count+=1)
@@ -85,7 +97,13 @@
                                         </a>
                                         <br />
                                         <small>
+                                            <span>Created Date :</span>
                                             @(((DateTime)item.CreatedDate).ToString("dd-MM-yyyy"))
+                                        </small>
+                                        <br />
+                                        <small>
+                                            <span>Updated Date :</span>
+                                            @(((DateTime)item.UpdatedDate).ToString("dd-MM-yyyy"))
                                         </small>
                                     </td>
                                     <td style="vertical-align: middle; text-align: center;">
@@ -99,6 +117,9 @@
                                     <td class="project-state">
                                         <span class="@color">@item.Category.CategoryName</span>
                                     </td>
+                                    <td>
+                                        <span class="@statusColor">@item.HeadingStatus</span> 
+                                    </td>
                                     <td class="project-actions text-right">
                                         <a class="btn btn-primary btn-sm" href="/Content/ContentByHeading/@item.HeadingID">
                                             <i class="fas fa-folder">
@@ -110,21 +131,30 @@
                                             </i>
                                             Edit
                                         </a>
-                                        <a class="btn btn-danger btn-sm" href="#">
-                                            <i class="fas fa-trash">
-                                            </i>
-                                            Delete
-                                        </a>
+                                        @if (item.HeadingStatus == true)
+                                        {
+                                            <a class="btn btn-danger btn-sm" href="/Heading/DeleteHeading/@item.HeadingID">
+                                                <i class="fas fa-trash">
+                                                </i>
+                                                Delete
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a class="btn btn-success btn-sm" href="/Heading/ActivateHeading/@item.HeadingID">
+                                                <i class="fas fa-trash">
+                                                </i>
+                                                Activate
+                                            </a>
+                                        }
+
                                     </td>
                                 </tr>
                                 }
                             </tbody>
                         </table>
                     </div>
-                    <!-- /.card-body -->
                 </div>
-                <!-- /.card -->
-
             </section>
 </body>
 </html>
