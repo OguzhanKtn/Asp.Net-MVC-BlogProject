@@ -61,3 +61,4 @@ C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\D
 C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.date1.resources
 C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.date2.resources
 C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.date3.resources
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.Message.resources
