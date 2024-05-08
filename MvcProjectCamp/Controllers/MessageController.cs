@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,8 +18,26 @@ namespace MvcProjectCamp.Controllers
         }
         public ActionResult Inbox()
         {
-            var messages = messageManager.GetAll();
+            var messages = messageManager.GetListInbox();
             return View(messages);
+        }
+
+        public ActionResult Sendbox() 
+        { 
+            var messages = messageManager.GetListSendBox();
+            return View(messages);
+        }
+
+        [HttpGet]
+        public ActionResult NewMessage() 
+        { 
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult NewMessage(Message message) 
+        {
+            return View();
         }
     }
 }
