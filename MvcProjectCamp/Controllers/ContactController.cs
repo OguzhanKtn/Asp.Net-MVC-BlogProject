@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
+using MvcProjectCamp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +13,12 @@ namespace MvcProjectCamp.Controllers
     public class ContactController : Controller
     {
         ContactManager contactManager;
+        MessageManager messageManager;
         ContactValidator contactValidator;
         public ContactController()
         {
             contactManager =  new ContactManager(new EfContactDal());
+            messageManager = new MessageManager(new EfMessageDal());
             contactValidator = new ContactValidator();
         }
 
@@ -33,7 +36,14 @@ namespace MvcProjectCamp.Controllers
 
         public PartialViewResult ContactPartial()
         {
-            return PartialView();
+            var contacts = contactManager.GetAll();
+            var messages = messageManager.GetListInbox();
+            var viewModel = new ContactMessageViewModel
+            {
+                Contacts = contacts,
+                Messages = messages
+            };
+            return PartialView(viewModel);
         }
     }
 }
