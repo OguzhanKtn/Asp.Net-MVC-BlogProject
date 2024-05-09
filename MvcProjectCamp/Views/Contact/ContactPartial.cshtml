@@ -1,8 +1,8 @@
 ﻿@using MvcProjectCamp.Models
 @model ContactMessageViewModel
+
 @{int communicationCount = Model.Contacts.Count; }
 @{int messageCount = Model.Messages.Count;}
-
 
 <div class="col-md-3">
     <a href="/Message/NewMessage" class="btn btn-primary btn-block mb-3">New Message</a>

@@ -1,0 +1,60 @@
+﻿@model EntityLayer.Concrete.Message
+
+@{
+    ViewBag.Title = "GetInboxDetails";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<h2>Message Detail</h2>
+<br />
+<br />
+<body class="hold-transition sidebar-mini">
+    <!-- Content Header (Page header) -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                @Html.Action("ContactPartial", "Contact")
+                <!-- /.col -->
+                <div class="col-md-9">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h3 class="card-title">Read Mail</h3>
+                            <div class="card-tools">
+                                <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Previous"><i class="fas fa-chevron-left"></i></a>
+                                <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Next"><i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- /.card-header -->
+
+                        <div class="card-body p-0">
+                            <div class="mailbox-read-info">
+                                <h5>Subject : @Html.DisplayFor(x => x.Subject)</h5>
+                                <br />
+                                <h6>
+                                    From : @Html.DisplayFor(x => x.SenderMail)
+                                    <span class="mailbox-read-time float-right">@Html.DisplayFor(x=>x.MessageDate.ToString("dd-MMM-yyyyy"))</span>
+                                </h6>
+                            </div>
+                            <!-- /.mailbox-read-info -->
+                            <!-- /.mailbox-controls -->
+                            <div class="mailbox-read-message">
+                                <p>
+                                    @Html.DisplayFor(x => x.MessageContent)
+                                </p>
+                            </div>
+                            <!-- /.mailbox-read-message -->
+                        </div>
+                        <!-- /.card-footer -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+    </section>
+</body>
+</html>
+

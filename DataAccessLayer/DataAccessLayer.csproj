@@ -120,6 +120,10 @@
     <Compile Include="Migrations\202405071438320_Message.designer.cs">
       <DependentUpon>202405071438320_Message.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202405091455132_ContactDateColumn.cs" />
+    <Compile Include="Migrations\202405091455132_ContactDateColumn.designer.cs">
+      <DependentUpon>202405091455132_ContactDateColumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -172,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202405071438320_Message.resx">
       <DependentUpon>202405071438320_Message.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405091455132_ContactDateColumn.resx">
+      <DependentUpon>202405091455132_ContactDateColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
