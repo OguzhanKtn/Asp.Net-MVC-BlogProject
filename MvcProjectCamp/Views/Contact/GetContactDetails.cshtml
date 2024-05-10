@@ -34,7 +34,7 @@
                                 <br />
                                 <h6>
                                     From : @Html.DisplayFor(x=>x.UserMail)
-                                    <span class="mailbox-read-time float-right">@Html.DisplayFor(x=>x.ContactDate.ToString("dd-MMM-yyyy"))</span>
+                                    <span class="mailbox-read-time float-right">@DateTime.Parse(Html.DisplayFor(x => x.ContactDate).ToString()).ToShortDateString()</span>
                                 </h6>
                             </div>
                             <!-- /.mailbox-read-info -->
