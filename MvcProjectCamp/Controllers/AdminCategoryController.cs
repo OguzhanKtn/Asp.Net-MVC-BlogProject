@@ -19,6 +19,7 @@ namespace MvcProjectCamp.Controllers
             headingManager = new HeadingManager(new EfHeadingDal());
         }
 
+        [Authorize(Roles = "A")]
         public ActionResult Index()
         {
             var categories = categoryManager.GetAll();
