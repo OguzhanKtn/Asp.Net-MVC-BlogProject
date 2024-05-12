@@ -21,9 +21,15 @@ namespace MvcProjectCamp.Controllers
         }
 
         [Authorize(Roles ="A")]
-        public ActionResult Inbox()
+        public ActionResult ReadMessages()
         {
-            var messages = messageManager.GetListInbox();
+            var messages = messageManager.GetListInbox().Where(x => x.IsRead == true);
+            return View(messages);
+        }
+        [Authorize(Roles = "A")]
+        public ActionResult UnReadMessages()
+        {
+            var messages = messageManager.GetListInbox().Where(x => x.IsRead == false);
             return View(messages);
         }
 
@@ -36,6 +42,8 @@ namespace MvcProjectCamp.Controllers
         public ActionResult GetInboxDetails(int id)
         {
             var values = messageManager.GetByID(id);
+            values.IsRead = true;
+            messageManager.Update(values);
             return View(values);
         }
 

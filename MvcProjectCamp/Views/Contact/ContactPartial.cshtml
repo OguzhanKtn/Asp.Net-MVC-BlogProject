@@ -2,8 +2,14 @@
 @model ContactMessageViewModel
 
 @{int communicationCount = Model.Contacts.Count; }
-@{int messageCount = Model.Messages.Count;}
-
+@{int unreadMessageCount = 0;}
+@foreach (var item in Model.Messages)
+{
+    if (item.IsRead == false)
+    {
+        unreadMessageCount++;
+    }
+}
 <div class="col-md-3">
     <a href="/Message/NewMessage" class="btn btn-primary btn-block mb-3">New Message</a>
     <div class="card">
@@ -23,11 +29,25 @@
                         <span class="badge bg-primary float-right">@communicationCount</span>
                     </a>
                 </li>
-                <li class="nav-item active">
-                    <a href="/Message/Inbox" class="nav-link">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="inboxDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-inbox"></i> Inbox
-                        <span class="badge bg-primary float-right">@messageCount</span>
                     </a>
+                    <div class="dropdown-menu" aria-labelledby="inboxDropdown">
+                        <div class="d-flex">
+                            <a class="dropdown-item" href="/Message/ReadMessages">Read Messages</a>
+                        </div>
+                        @if (unreadMessageCount > 0)
+                        {
+                            <hr />
+                            <div class="d-flex">
+                                <a class="dropdown-item" href="/Message/UnReadMessages">Unread Messages</a>
+
+                                <span class="badge bg-primary float-right">@unreadMessageCount</span>
+
+                            </div>
+                        }
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a href="/Message/Sendbox" class="nav-link">
@@ -89,3 +109,5 @@
     </div>
     <!-- /.card -->
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
