@@ -4,6 +4,7 @@ using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
 using System.Web.Mvc;
+using MvcProjectCamp.Core;
 
 namespace MvcProjectCamp.Controllers
 {
@@ -32,8 +33,11 @@ namespace MvcProjectCamp.Controllers
         {
             WriterValidator writerValidator = new WriterValidator();
             ValidationResult results = writerValidator.Validate(p);
+           
             if(results.IsValid) 
-            { 
+            {
+                var hashPassword = PasswordHasher.HashPassword(p.WriterPassword);
+                p.WriterPassword = hashPassword;
                 writerManager.WriterAdd(p);
                 return RedirectToAction("Index");
             }
@@ -61,6 +65,8 @@ namespace MvcProjectCamp.Controllers
             ValidationResult results = writerValidator.Validate(writer);
             if (results.IsValid)
             {
+                var hashPassword = PasswordHasher.HashPassword(writer.WriterPassword);
+                writer.WriterPassword = hashPassword;
                 writerManager.WriterUpdate(writer);
                 return RedirectToAction("Index");
             }

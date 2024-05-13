@@ -1,0 +1,36 @@
+﻿@using EntityLayer.Concrete
+@model List<Heading>
+
+@{
+    ViewBag.Title = "HeadingByWriter";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<html>
+    <body>
+        <table class="table table-bordered">
+            <thead>
+                <th>Title</th>
+                <th>Date</th>
+            </thead>
+            <tbody>
+                @foreach(var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a href="/Content/ContentByHeading/@item.HeadingID">
+                                @item.HeadingName
+                            </a>
+                        </td>
+                        <td>@item.CreatedDate</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+    </body>
+
+
+</html>
+

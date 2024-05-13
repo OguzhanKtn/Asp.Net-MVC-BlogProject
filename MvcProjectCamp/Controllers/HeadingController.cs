@@ -79,6 +79,12 @@ namespace MvcProjectCamp.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult HeadingByWriter(int id)
+        {
+            var titles = headingManager.GetAll().Where(x => x.WriterID == id).ToList();
+            return View(titles);
+        }
+
         public ActionResult DeleteHeading(int id)
         {
             var heading = headingManager.GetByID(id);
