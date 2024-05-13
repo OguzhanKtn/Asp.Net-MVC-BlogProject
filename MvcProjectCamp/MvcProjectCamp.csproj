@@ -2474,7 +2474,7 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Message\Sendbox.cshtml" />
     <Content Include="Views\Message\ReadMessages.cshtml" />
-    <Content Include="Views\Message\UnReadMessages.cshtml" />
+    <Content Include="Views\Message\UnreadMessages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

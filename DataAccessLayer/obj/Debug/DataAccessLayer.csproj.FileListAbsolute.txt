@@ -77,3 +77,5 @@ C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\D
 C:\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.ContactDateColumn.resources
 C:\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.admin.resources
 C:\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.IsReadColumnAddedinMessage.resources
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.admin.resources
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.IsReadColumnAddedinMessage.resources

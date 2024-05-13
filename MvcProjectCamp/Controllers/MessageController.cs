@@ -20,17 +20,16 @@ namespace MvcProjectCamp.Controllers
             messageManager = new MessageManager(new EfMessageDal());
         }
 
-        [Authorize(Roles ="A")]
         public ActionResult ReadMessages()
         {
-            var messages = messageManager.GetListInbox().Where(x => x.IsRead == true);
+            var messages = messageManager.GetListInbox().Where(x => x.IsRead == true).ToList();
             return View(messages);
         }
-        [Authorize(Roles = "A")]
-        public ActionResult UnReadMessages()
+
+        public ActionResult UnreadMessages()
         {
-            var messages = messageManager.GetListInbox().Where(x => x.IsRead == false);
-            return View(messages);
+            var messages = messageManager.GetListInbox().Where(x => x.IsRead == false).ToList();
+            return View(messages);  
         }
 
         public ActionResult Sendbox() 
