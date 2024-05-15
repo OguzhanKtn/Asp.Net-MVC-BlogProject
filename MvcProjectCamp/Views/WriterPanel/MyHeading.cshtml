@@ -1,0 +1,149 @@
+﻿@using EntityLayer.Concrete
+@model List<Heading>
+
+@{
+    ViewBag.Title = "MyHeading";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+@{string color = "";}
+@{string statusColor = ""; }
+@{int count = 0; }
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <!-- Content Header (Page header) -->
+    <!-- Main content -->
+    <section class="content">
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-title">Heading Processes</h1>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-striped projects">
+                    <thead>
+                        <tr>
+                            <th style="width: 5%">
+                                #
+                            </th>
+                            <th style="width: 15%">
+                                Title Name
+                            </th>
+                            <th style="width: 1%;">
+                                Writer
+                            </th>
+                            <th style="width: 20%" class="text-center">
+                                Category
+                            </th>
+                            <th style="width: 20%">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            if (item.Category.CategoryName == "Tiyatro")
+                            {
+                                color = "badge badge-success";
+                            }
+                            else if (item.Category.CategoryName == "Spor")
+                            {
+                                color = "badge badge-warning";
+                            }
+                            else if (item.Category.CategoryName == "Eğitim")
+                            {
+                                color = "badge badge-info";
+                            }
+                            else if (item.Category.CategoryName == "Kitap")
+                            {
+                                color = "badge badge-dark";
+                            }
+                            else if (item.Category.CategoryName == "Dizi")
+                            {
+                                color = "badge badge-secondary";
+                            }
+                            else if (item.Category.CategoryName == "Film")
+                            {
+                                color = "badge badge-primary";
+                            }
+                            <tr>
+                                <th>
+                                    @(count+=1)
+                                </th>
+                                <td>
+                                    <a>
+                                        @item.HeadingName
+                                    </a>
+                                    <br />
+                                    <small>
+                                        <span>Created Date :</span>
+                                        @(((DateTime)item.CreatedDate).ToString("dd-MM-yyyy"))
+                                    </small>
+                                    <br />
+                                    <small>
+                                        <span>Updated Date :</span>
+                                        @(((DateTime)item.UpdatedDate).ToString("dd-MM-yyyy"))
+                                    </small>
+                                </td>
+                                <td style="vertical-align: middle; text-align: center;">
+                                    <!-- Hücre hizalaması -->
+                                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                        <img alt="Avatar" class="table-avatar" src="@item.Writer.WriterImage" />
+                                        <p><b>@(item.Writer.WriterName + " " + item.Writer.WriterSurname)</b></p>
+                                    </div>
+                                </td>
+
+                                <td class="project-state">
+                                    <span class="@color">@item.Category.CategoryName</span>
+                                </td>
+                               
+                                <td class="project-actions text-right">
+                                    <a class="btn btn-primary btn-sm" href="/Content/ContentByHeading/@item.HeadingID">
+                                        <i class="fas fa-folder">
+                                        </i>
+                                        Contents
+                                    </a>
+                                    <a class="btn btn-info btn-sm" href="/WriterPanel/EditHeading/@item.HeadingID">
+                                        <i class="fas fa-pencil-alt">
+                                        </i>
+                                        Edit
+                                    </a>
+                                    @if (item.HeadingStatus == true)
+                                    {
+                                        <a class="btn btn-danger btn-sm" href="/WriterPanel/DeleteHeading/@item.HeadingID">
+                                            <i class="fas fa-trash">
+                                            </i>
+                                            Delete
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a class="btn btn-success btn-sm" href="/Heading/ActivateHeading/@item.HeadingID">
+                                            <i class="fas fa-trash">
+                                            </i>
+                                            Activate
+                                        </a>
+                                    }
+
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+<a href="/WriterPanel/NewHeading" class="btn btn-primary">Add Title</a>

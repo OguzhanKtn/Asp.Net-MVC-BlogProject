@@ -148,6 +148,8 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\WriterController.cs" />
+    <Compile Include="Controllers\WriterPanelController.cs" />
+    <Compile Include="Controllers\WriterPanelMessageController.cs" />
     <Compile Include="Core\PasswordHasher.cs" />
     <Compile Include="Core\PasswordVerifier.cs" />
     <Compile Include="Global.asax.cs">
@@ -2478,10 +2480,16 @@
     <Content Include="Views\Message\ReadMessages.cshtml" />
     <Content Include="Views\Message\UnreadMessages.cshtml" />
     <Content Include="Views\Heading\HeadingByWriter.cshtml" />
+    <Content Include="Views\Shared\_WriterLayout.cshtml" />
+    <Content Include="Views\WriterPanel\WriterProfile.cshtml" />
+    <Content Include="Views\WriterPanel\MyHeading.cshtml" />
+    <Content Include="Views\WriterPanel\NewHeading.cshtml" />
+    <Content Include="Views\WriterPanel\EditHeading.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Default\" />
+    <Folder Include="Views\WriterPanelMessage\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
