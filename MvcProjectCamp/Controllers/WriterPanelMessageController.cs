@@ -19,9 +19,27 @@ namespace MvcProjectCamp.Controllers
             messageValidator = new MessageValidator();
         }
 
-        public ActionResult Index()
+        public ActionResult ReadMessages()
         {
-            return View();
+            var messages = messageManager.GetListInbox().Where(x => x.IsRead == true).ToList();
+            return View(messages);
+        }
+
+        public ActionResult UnreadMessages()
+        {
+            var messages = messageManager.GetListInbox().Where(x => x.IsRead == false).ToList();
+            return View(messages);
+        }
+
+        public ActionResult Sendbox()
+        {
+            var messages = messageManager.GetListSendBox();
+            return View(messages);
+        }
+
+        public PartialViewResult MessageListMenu()
+        {
+            return PartialView();
         }
     }
 }
