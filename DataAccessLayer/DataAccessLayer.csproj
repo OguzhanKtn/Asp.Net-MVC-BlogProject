@@ -136,6 +136,10 @@
     <Compile Include="Migrations\202405121942511_IsReadColumnAddedinMessage.designer.cs">
       <DependentUpon>202405121942511_IsReadColumnAddedinMessage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202405171103396_messageIsDeletedColumn.cs" />
+    <Compile Include="Migrations\202405171103396_messageIsDeletedColumn.designer.cs">
+      <DependentUpon>202405171103396_messageIsDeletedColumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -197,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202405121942511_IsReadColumnAddedinMessage.resx">
       <DependentUpon>202405121942511_IsReadColumnAddedinMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405171103396_messageIsDeletedColumn.resx">
+      <DependentUpon>202405171103396_messageIsDeletedColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

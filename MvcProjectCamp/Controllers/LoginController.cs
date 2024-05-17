@@ -13,9 +13,11 @@ namespace MvcProjectCamp.Controllers
     public class LoginController : Controller
     {
         AdminManager adminManager;
+        WriterManager writerManager;
         public LoginController()
         {
             adminManager = new AdminManager(new EfAdminDal());
+            writerManager = new WriterManager(new EfWriterDal());
         }
 
         [HttpGet]
@@ -40,6 +42,30 @@ namespace MvcProjectCamp.Controllers
             else
             {
                 return RedirectToAction("Index");
+            }
+            return View();
+        }
+        [HttpGet]
+        public ActionResult WriterLogin() 
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult WriterLogin(Writer p)
+        {
+            List<Writer> writers = writerManager.GetList();
+
+            var writerUser = writers.FirstOrDefault(x => x.WriterMail.Equals(p.WriterMail) && x.WriterPassword.Equals(p.WriterPassword));
+
+            if ( writerUser != null)
+            {
+                FormsAuthentication.SetAuthCookie(writerUser.WriterMail, false);
+                Session["WriterMail"] = writerUser.WriterMail;
+                return RedirectToAction("MyContent", "WriterPanelContent");
+            }
+            else
+            {
+                return RedirectToAction("WriterLogin");
             }
             return View();
         }

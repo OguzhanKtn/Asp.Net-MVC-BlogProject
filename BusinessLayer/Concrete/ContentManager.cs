@@ -33,6 +33,11 @@ namespace BusinessLayer.Concrete
             return _contentDal.List();
         }
 
+        public List<Content> GetAllByWriter()
+        {
+            return _contentDal.List(x => x.WriterID == 4);
+        }
+
         public Content GetByID(int id)
         {
             return _contentDal.Get(x=>x.ContentID == id);

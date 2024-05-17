@@ -79,3 +79,4 @@ C:\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migr
 C:\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.IsReadColumnAddedinMessage.resources
 C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.admin.resources
 C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.IsReadColumnAddedinMessage.resources
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.messageIsDeletedColumn.resources
