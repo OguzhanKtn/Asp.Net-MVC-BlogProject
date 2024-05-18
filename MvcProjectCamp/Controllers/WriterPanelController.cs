@@ -13,6 +13,7 @@ namespace MvcProjectCamp.Controllers
     {
         HeadingManager headingManager;
         CategoryManager categoryManager;
+        
         public WriterPanelController()
         {
             headingManager = new HeadingManager(new EfHeadingDal());
@@ -24,9 +25,11 @@ namespace MvcProjectCamp.Controllers
             return View();
         }
 
-        public ActionResult MyHeading(int id)
+        public ActionResult MyHeading(string p)
         {
-            var values = headingManager.GetListByWriter(id);
+            p = (string)Session["WriterMail"];
+            var writerIdInfo = headingManager.GetAll().Where(x => x.Writer.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
+            var values = headingManager.GetListByWriter(writerIdInfo);
             return View(values);
         }
 
@@ -47,8 +50,10 @@ namespace MvcProjectCamp.Controllers
         [HttpPost]
         public ActionResult NewHeading(Heading p)
         {
+            string writerMail = (string)Session["WriterMail"];
+            var writerIdInfo = headingManager.GetAll().Where(x => x.Writer.WriterMail == writerMail).Select(y => y.WriterID).FirstOrDefault();
             p.CreatedDate = DateTime.Now;
-           
+            p.WriterID = writerIdInfo;
             headingManager.Add(p);
             return RedirectToAction("MyHeading");
         }
@@ -82,6 +87,12 @@ namespace MvcProjectCamp.Controllers
             headingManager.Delete(heading);
 
             return RedirectToAction("MyHeading");
+        }
+
+        public ActionResult AllHeading()
+        {
+            var headings = headingManager.GetAll();
+            return View(headings);
         }
     }
 }

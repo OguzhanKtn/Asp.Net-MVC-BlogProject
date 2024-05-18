@@ -1,8 +1,11 @@
-﻿
+﻿@using DataAccessLayer.Concrete
 @{
     Layout = null;
 }
-
+@{Context context = new Context(); }
+@{string writerMail = (string)Session["WriterMail"];}
+@{var writerName = context.Writers.Where(x => x.WriterMail == writerMail).Select(y => y.WriterName +" "+ y.WriterSurname).FirstOrDefault(); }
+@{ var writerImage = context.Writers.Where(x => x.WriterMail == writerMail).Select(y => y.WriterImage).FirstOrDefault();}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>AdminLTE 3 | Dashboard 3</title>
+    <title>Dashboard</title>
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
@@ -42,10 +45,10 @@ to get the desired effect
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="~/AdminLTE-3.0.4/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="@writerImage" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                        <a href="#" class="d-block">@writerName</a>
                     </div>
                 </div>
 
@@ -67,6 +70,14 @@ to get the desired effect
                                 <i class="nav-icon fas fa-heading"></i>
                                 <p>
                                     My Titles
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/WriterPanel/AllHeading" class="nav-link">
+                                <i class="nav-icon fas fa-list-alt"></i>
+                                <p>
+                                    All Titles
                                 </p>
                             </a>
                         </li>

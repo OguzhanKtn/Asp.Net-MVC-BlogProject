@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using MvcProjectCamp.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ using System.Web.Security;
 
 namespace MvcProjectCamp.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         AdminManager adminManager;
@@ -54,8 +56,9 @@ namespace MvcProjectCamp.Controllers
         public ActionResult WriterLogin(Writer p)
         {
             List<Writer> writers = writerManager.GetList();
-
-            var writerUser = writers.FirstOrDefault(x => x.WriterMail.Equals(p.WriterMail) && x.WriterPassword.Equals(p.WriterPassword));
+            var hashPassword = PasswordHasher.HashPassword(p.WriterPassword);
+           
+            var writerUser = writers.FirstOrDefault(x => x.WriterMail.Equals(p.WriterMail) && x.WriterPassword.Equals(hashPassword));
 
             if ( writerUser != null)
             {

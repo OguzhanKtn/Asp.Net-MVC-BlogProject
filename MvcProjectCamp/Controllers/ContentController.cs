@@ -23,7 +23,7 @@ namespace MvcProjectCamp.Controllers
 
         public ActionResult ContentByHeading(int id) 
         {
-          List<Content> contents = contentManager.GetListByID(id);
+          List<Content> contents = contentManager.GetListByHeadingID(id);
             return View(contents);
         }
     }
