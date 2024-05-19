@@ -22,19 +22,19 @@ namespace MvcProjectCamp.Controllers
 
         public ActionResult ReadMessages()
         {
-            var messages = messageManager.GetListInbox().Where(x => x.IsRead == true).ToList();
+            var messages = messageManager.GetListAdminInbox().Where(x => x.IsRead == true).ToList();
             return View(messages);
         }
 
         public ActionResult UnreadMessages()
         {
-            var messages = messageManager.GetListInbox().Where(x => x.IsRead == false).ToList();
+            var messages = messageManager.GetListAdminInbox().Where(x => x.IsRead == false).ToList();
             return View(messages);  
         }
 
         public ActionResult Sendbox() 
-        { 
-            var messages = messageManager.GetListSendBox();
+        {
+            var messages = messageManager.GetListAdminSendbox();
             return View(messages);
         }
 

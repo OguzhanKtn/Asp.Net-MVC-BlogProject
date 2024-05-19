@@ -30,8 +30,9 @@ namespace MvcProjectCamp.Controllers
         }
 
         [HttpGet]
-        public ActionResult AddContent()
+        public ActionResult AddContent(int id)
         {
+            ViewBag.Id = id;  
             return View();
         }
 
@@ -40,11 +41,13 @@ namespace MvcProjectCamp.Controllers
         { 
             p.CreatedDate = DateTime.Parse(DateTime.Now.ToShortDateString());
             string writerInfo = (string)Session["WriterMail"];
-            var writerIdInfo = context.Writers.Where(x => x.WriterMail == p.Writer.WriterMail).Select(y => y.WriterID).FirstOrDefault();
+            var writerIdInfo = context.Writers.Where(x => x.WriterMail == writerInfo).Select(y => y.WriterID).FirstOrDefault();
             p.WriterID = writerIdInfo;
 
             contentManager.Add(p);
             return RedirectToAction("MyContent");
         }
+
+
     }
 }

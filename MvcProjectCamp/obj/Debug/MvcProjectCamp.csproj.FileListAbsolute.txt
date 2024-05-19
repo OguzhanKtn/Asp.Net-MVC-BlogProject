@@ -194,3 +194,7 @@ C:\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\System.Threading.Tasks.Exte
 C:\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\FluentValidation.xml
 C:\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\PagedList.dll
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\PagedList.Mvc.dll
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\PagedList.xml
+C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\PagedList.Mvc.xml

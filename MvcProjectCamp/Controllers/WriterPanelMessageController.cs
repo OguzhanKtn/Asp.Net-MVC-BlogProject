@@ -23,13 +23,15 @@ namespace MvcProjectCamp.Controllers
 
         public ActionResult ReadMessages()
         {
-            var messages = messageManager.GetListInbox().Where(x => x.IsRead == true).ToList();
+            string p = (string)Session["WriterMail"];
+            var messages = messageManager.GetListInbox(p).Where(x => x.IsRead == true).ToList();
             return View(messages);
         }
 
         public ActionResult UnreadMessages()
         {
-            var messages = messageManager.GetListInbox().Where(x => x.IsRead == false).ToList();
+            string p = (string)Session["WriterMail"];
+            var messages = messageManager.GetListInbox(p).Where(x => x.IsRead == false).ToList();
             return View(messages);
         }
         public ActionResult GetInboxDetails(int id)
@@ -41,7 +43,8 @@ namespace MvcProjectCamp.Controllers
         }
         public ActionResult Sendbox()
         {
-            var messages = messageManager.GetListSendBox();
+            string p = (string)Session["WriterMail"];
+            var messages = messageManager.GetListSendBox(p);
             return View(messages);
         }
         public ActionResult GetSendboxDetails(int id)
@@ -78,7 +81,9 @@ namespace MvcProjectCamp.Controllers
         }
         public PartialViewResult MessageListMenu()
         {
-            return PartialView();
+            string p = (string)Session["WriterMail"];
+            var messages = messageManager.GetListInbox(p);
+            return PartialView(messages);
         }
     }
 }

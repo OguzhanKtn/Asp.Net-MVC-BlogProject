@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MvcProjectCamp.Controllers
 {
@@ -89,9 +91,9 @@ namespace MvcProjectCamp.Controllers
             return RedirectToAction("MyHeading");
         }
 
-        public ActionResult AllHeading()
+        public ActionResult AllHeading(int p = 1)
         {
-            var headings = headingManager.GetAll();
+            var headings = headingManager.GetAll().ToPagedList(p,5);
             return View(headings);
         }
     }

@@ -20,6 +20,7 @@ namespace BusinessLayer.Concrete
 
         public void Add(Content content)
         {
+            content.UpdatedDate = DateTime.Parse(DateTime.Now.ToShortDateString());
             _contentDal.Insert(content);
         }
 
@@ -50,6 +51,7 @@ namespace BusinessLayer.Concrete
 
         public void Update(Content content)
         {
+            content.UpdatedDate = DateTime.Parse(DateTime.Now.ToShortDateString());
             _contentDal.Update(content);
         }
 

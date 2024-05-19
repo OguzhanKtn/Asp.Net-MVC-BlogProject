@@ -37,7 +37,7 @@ namespace MvcProjectCamp.Controllers
         public PartialViewResult ContactPartial()
         {
             var contacts = contactManager.GetAll();
-            var messages = messageManager.GetListInbox();
+            var messages = messageManager.GetListAdminInbox();
             var viewModel = new ContactMessageViewModel
             {
                 Contacts = contacts,

@@ -23,13 +23,13 @@ namespace MvcProjectCamp.Controllers
         }
 
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult AdminLogin()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Index(Admin p)
+        public ActionResult AdminLogin(Admin p)
         {
             List<Admin> admins = adminManager.GetAll();
 
@@ -43,7 +43,7 @@ namespace MvcProjectCamp.Controllers
             }
             else
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("AdminLogin");
             }
             return View();
         }
@@ -71,6 +71,13 @@ namespace MvcProjectCamp.Controllers
                 return RedirectToAction("WriterLogin");
             }
             return View();
+        }
+
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Headings", "Default");
         }
     }
 }
