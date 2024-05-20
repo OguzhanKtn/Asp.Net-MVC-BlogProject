@@ -1,12 +1,16 @@
 ﻿@using EntityLayer.Concrete
 @model List<Message>
 
-@{int unreadMessageCount = 0;}
+@{int unreadMessageCount = 0; int deletedMessageCount = 0;}
 @foreach (var item in Model)
 {
     if (item.IsRead == false)
     {
         unreadMessageCount++;
+    }
+    if(item.IsDeleted == true)
+    {
+        deletedMessageCount++;
     }
 }
 <div class="col-md-3">
@@ -59,8 +63,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="/WriterPanelMessage/DeletedMessages" class="nav-link">
                         <i class="far fa-trash-alt"></i> Trash
+                        <span class="badge bg-warning float-right">@deletedMessageCount</span>
                     </a>
                 </li>
             </ul>

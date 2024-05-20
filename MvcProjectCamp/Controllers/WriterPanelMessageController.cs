@@ -3,9 +3,11 @@ using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -24,7 +26,7 @@ namespace MvcProjectCamp.Controllers
         public ActionResult ReadMessages()
         {
             string p = (string)Session["WriterMail"];
-            var messages = messageManager.GetListInbox(p).Where(x => x.IsRead == true).ToList();
+            var messages = messageManager.GetListInbox(p).Where(x => x.IsRead == true && x.IsDeleted == false).ToList();
             return View(messages);
         }
 
@@ -33,6 +35,38 @@ namespace MvcProjectCamp.Controllers
             string p = (string)Session["WriterMail"];
             var messages = messageManager.GetListInbox(p).Where(x => x.IsRead == false).ToList();
             return View(messages);
+        }
+
+        public ActionResult DeletedMessages()
+        {
+            string p = (string)Session["WriterMail"];
+            var messages = messageManager.GetListInbox(p).Where(x => x.IsDeleted == true).ToList();
+            return View(messages);
+        }
+
+        public async Task<string> DeleteMessage(string messageIds)
+        {
+            string result = "";
+            string p = (string)Session["WriterMail"];
+            string[] Ids = messageIds.Split(',');
+            List<Message> messages = messageManager.GetListInbox(p);
+            if (messageIds != null && Ids.Length > 0)
+            {
+                foreach (var item in messages)
+                {
+                    foreach (var id in Ids)
+                    {
+                        if (item.MessageID == Convert.ToInt32(id))
+                        {
+                            item.IsDeleted = true;
+                            messageManager.Update(item);
+                            result = "Ok";
+                        }
+                    }
+                }
+                
+            }
+            return result;
         }
         public ActionResult GetInboxDetails(int id)
         {
@@ -66,7 +100,9 @@ namespace MvcProjectCamp.Controllers
             ValidationResult results = messageValidator.Validate(p);
             if (results.IsValid)
             {
+                string writerInfo = (string)Session["WriterMail"];
                 p.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+                p.SenderMail = writerInfo;
                 messageManager.Add(p);
                 return RedirectToAction("Sendbox");
             }
