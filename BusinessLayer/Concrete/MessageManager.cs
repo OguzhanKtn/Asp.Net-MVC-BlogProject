@@ -52,7 +52,7 @@ namespace BusinessLayer.Concrete
             return _messageDal.List(x => x.SenderMail == p);
         }
 
-        public void Update(Message message)
+        public async Task Update(Message message)
         {
             _messageDal.Update(message);
         }

@@ -42,28 +42,7 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body p-0">
-                        <div class="mailbox-controls">
-                            <!-- Check all button -->
-                            <button type="button" class="btn btn-default btn-sm checkbox-toggle">
-                                <i class="far fa-square"></i>
-                            </button>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-reply"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-share"></i></button>
-                            </div>
-                            <!-- /.btn-group -->
-                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
-                            <div class="float-right">
-                                1-50/200
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-left"></i></button>
-                                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-right"></i></button>
-                                </div>
-                                <!-- /.btn-group -->
-                            </div>
-                            <!-- /.float-right -->
-                        </div>
+                      
                         <div class="table-responsive mailbox-messages">
                             <table id="checkDiv" class="table table-hover table-striped">
                                 <tbody>
@@ -132,19 +111,26 @@
         $('#checkDiv input[type="checkbox"]:checked').each(function () {
             selected.push($(this).attr('value'));
         });
-        $.ajax({
-            url: window.location.origin + "/WriterPanelMessage/DeleteMessage?messageIds=" + selected + "",
-            dataType: 'json',
-            data: "",
-            timeout: 10000, 
-            success: function (response) {
-                alert(response.data);
-            },
-            error: function (xhr, ajaxOptions, thrownError) {
-                alert("error");
-            }
+        var messageIds = selected.join(',');
+               $.ajax({
+                url: '@Url.Action("DeleteMessage", "WriterPanelMessage")',
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                data: JSON.stringify({ messageIds: messageIds }),
+                timeout: 10000,
+                success: function (result) {
+                    if (result === 'Ok') {
+                        location.reload();
+                    } else {
+                        alert('Silme işlemi başarısız oldu.');
+                    }
+                },
+                error: function () {
+                    alert('Bir hata oluştu.');
+                }
         });
     }
- 
-     
+
+
 </script>

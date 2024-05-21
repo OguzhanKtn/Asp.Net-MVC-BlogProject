@@ -16,6 +16,6 @@ namespace BusinessLayer.Abstract
         void Add(Message message);
         Message GetByID(int id);
         void Delete(Message message);
-        void Update(Message message);
+        Task Update(Message message);
     }
 }

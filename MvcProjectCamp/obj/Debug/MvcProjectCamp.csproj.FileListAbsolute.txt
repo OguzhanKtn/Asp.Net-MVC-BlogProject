@@ -198,3 +198,7 @@ C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\Pa
 C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\PagedList.Mvc.dll
 C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\PagedList.xml
 C:\Users\Oğuzhan\Documents\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\PagedList.Mvc.xml
+C:\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\PagedList.dll
+C:\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\PagedList.Mvc.dll
+C:\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\PagedList.xml
+C:\GitHub\Asp.Net-MVC-BlogProject\MvcProjectCamp\bin\PagedList.Mvc.xml

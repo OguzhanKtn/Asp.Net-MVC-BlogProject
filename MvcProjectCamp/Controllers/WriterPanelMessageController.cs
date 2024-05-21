@@ -44,30 +44,109 @@ namespace MvcProjectCamp.Controllers
             return View(messages);
         }
 
-        public async Task<string> DeleteMessage(string messageIds)
+        /* public async Task<ActionResult> DeleteMessage(string messageIds)
+         {
+             try
+             {
+                 string p = (string)Session["WriterMail"];
+                 string[] Ids = messageIds.Split(',');
+                 List<Message> messages = messageManager.GetListInbox(p);
+
+                 if (!string.IsNullOrEmpty(messageIds) && Ids.Length > 0)
+                 {
+                     foreach (var item in messages)
+                     {
+                         foreach (var id in Ids)
+                         {
+                             if (item.MessageID == Convert.ToInt32(id))
+                             {
+                                 item.IsDeleted = true;
+                                 await messageManager.Update(item);
+                             }
+                         }
+                     }
+                 }
+
+                 System.Diagnostics.Debug.WriteLine("Yönlendirme yapılacak: ReadMessages");
+
+                 return RedirectToAction("ReadMessages", "WriterPanelMessage");
+             }
+             catch (Exception ex)
+             {
+                 System.Diagnostics.Debug.WriteLine("Hata oluştu: " + ex.Message);
+                 return View("Error");
+             }
+         }*/
+
+        [HttpPost]
+        public async Task<JsonResult> DeleteMessage(string messageIds)
         {
-            string result = "";
-            string p = (string)Session["WriterMail"];
-            string[] Ids = messageIds.Split(',');
-            List<Message> messages = messageManager.GetListInbox(p);
-            if (messageIds != null && Ids.Length > 0)
+            try
             {
-                foreach (var item in messages)
+                string p = (string)Session["WriterMail"];
+                string[] Ids = messageIds.Split(',');
+                List<Message> messages = messageManager.GetListInbox(p);
+
+                if (!string.IsNullOrEmpty(messageIds) && Ids.Length > 0)
                 {
-                    foreach (var id in Ids)
+                    foreach (var item in messages)
                     {
-                        if (item.MessageID == Convert.ToInt32(id))
+                        foreach (var id in Ids)
                         {
-                            item.IsDeleted = true;
-                            messageManager.Update(item);
-                            result = "Ok";
+                            if (item.MessageID == Convert.ToInt32(id))
+                            {
+                                item.IsDeleted = true;
+                                await messageManager.Update(item);
+                            }
                         }
                     }
                 }
-                
+
+                System.Diagnostics.Debug.WriteLine("Yönlendirme yapılacak: ReadMessages");
+                return Json(new { result = "Ok" });
             }
-            return result;
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Hata oluştu: " + ex.Message);
+                return Json(new { result = "Fail" });
+            }
         }
+
+
+        [HttpPost]
+        public async Task<JsonResult> RetrieveMessage(string messageIds)
+        {
+            try
+            {
+                string p = (string)Session["WriterMail"];
+                string[] Ids = messageIds.Split(',');
+                List<Message> messages = messageManager.GetListInbox(p);
+
+                if (!string.IsNullOrEmpty(messageIds) && Ids.Length > 0)
+                {
+                    foreach (var item in messages)
+                    {
+                        foreach (var id in Ids)
+                        {
+                            if (item.MessageID == Convert.ToInt32(id))
+                            {
+                                item.IsDeleted = false;
+                                await messageManager.Update(item);
+                            }
+                        }
+                    }
+                }
+
+                System.Diagnostics.Debug.WriteLine("Yönlendirme yapılacak: DeletedMessages");
+                return Json(new { result = "Ok" });
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Hata oluştu: " + ex.Message);
+                return Json(new { result = "Fail" });
+            }
+        }
+
         public ActionResult GetInboxDetails(int id)
         {
             var values = messageManager.GetByID(id);
