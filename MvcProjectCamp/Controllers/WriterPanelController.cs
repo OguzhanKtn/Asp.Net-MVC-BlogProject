@@ -26,10 +26,10 @@ namespace MvcProjectCamp.Controllers
         }
 
         [HttpGet]
-        public ActionResult WriterProfile(int id)
+        public ActionResult WriterProfile()
         {
             string p = (string)Session["WriterMail"];
-            id = writerManager.GetList().Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
+            int id = writerManager.GetList().Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
             var writerValue = writerManager.GetByID(id);
             return View(writerValue);
         }

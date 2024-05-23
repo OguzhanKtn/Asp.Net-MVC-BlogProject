@@ -15,11 +15,11 @@ namespace MvcProjectCamp.Controllers
     public class LoginController : Controller
     {
         AdminManager adminManager;
-        WriterManager writerManager;
+        WriterLoginManager writerLoginManager;
         public LoginController()
         {
             adminManager = new AdminManager(new EfAdminDal());
-            writerManager = new WriterManager(new EfWriterDal());
+            writerLoginManager = new WriterLoginManager(new EfWriterDal());
         }
 
         [HttpGet]
@@ -55,10 +55,9 @@ namespace MvcProjectCamp.Controllers
         [HttpPost]
         public ActionResult WriterLogin(Writer p)
         {
-            List<Writer> writers = writerManager.GetList();
             var hashPassword = PasswordHasher.HashPassword(p.WriterPassword);
-           
-            var writerUser = writers.FirstOrDefault(x => x.WriterMail.Equals(p.WriterMail) && x.WriterPassword.Equals(hashPassword));
+
+            var writerUser = writerLoginManager.GetWriter(p.WriterMail,hashPassword);
 
             if ( writerUser != null)
             {
