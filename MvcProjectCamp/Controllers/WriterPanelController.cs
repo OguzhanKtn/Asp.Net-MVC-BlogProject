@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using PagedList;
 using PagedList.Mvc;
+using BusinessLayer.ValidationRules;
+using FluentValidation.Results;
 
 namespace MvcProjectCamp.Controllers
 {
@@ -15,18 +17,42 @@ namespace MvcProjectCamp.Controllers
     {
         HeadingManager headingManager;
         CategoryManager categoryManager;
-        
+        WriterManager writerManager;    
         public WriterPanelController()
         {
             headingManager = new HeadingManager(new EfHeadingDal());
             categoryManager = new CategoryManager(new EfCategoryDal());
+            writerManager = new WriterManager(new EfWriterDal());
         }
 
-        public ActionResult WriterProfile()
+        [HttpGet]
+        public ActionResult WriterProfile(int id)
         {
+            string p = (string)Session["WriterMail"];
+            id = writerManager.GetList().Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
+            var writerValue = writerManager.GetByID(id);
+            return View(writerValue);
+        }
+
+        [HttpPost]
+        public ActionResult WriterProfile(Writer p)
+        {
+            WriterValidator writerValidator = new WriterValidator();  
+            ValidationResult validationResult = writerValidator.Validate(p);
+            if (validationResult.IsValid)
+            {
+                writerManager.WriterUpdate(p);
+                return RedirectToAction("AllHeading","WriterPanel");
+            }
+            else
+            {
+                foreach(var item in validationResult.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
             return View();
         }
-
         public ActionResult MyHeading(string p)
         {
             p = (string)Session["WriterMail"];
