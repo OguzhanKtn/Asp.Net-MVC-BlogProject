@@ -121,9 +121,9 @@
                 timeout: 10000,
                 success: function (result) {
                     if (result === 'Ok') {
-                        location.reload();
+                        window.location.href = 'https://localhost:44300/WriterPanelMessage/ReadMessages';
                     } else {
-                        alert('Silme işlemi başarısız oldu.');
+                        window.location.href = 'https://localhost:44300/WriterPanelMessage/ReadMessages';
                     }
                 },
                 error: function () {

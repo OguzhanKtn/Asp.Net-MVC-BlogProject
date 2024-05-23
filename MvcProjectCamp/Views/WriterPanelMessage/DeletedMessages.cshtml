@@ -113,8 +113,7 @@
             });
 
             var messageIds = selected.join(',');
-            console.log("messageIds: ", messageIds); // Konsolda messageIds'yi kontrol etmek için
-
+           
             $.ajax({
                 url: '@Url.Action("RetrieveMessage", "WriterPanelMessage")',
                 type: 'POST',
@@ -125,9 +124,9 @@
                 success: function (result) {
                     console.log("AJAX Success: ", result);
                     if (result === 'Ok') {
-                        location.reload()
+                        window.location.href = 'https://localhost:44300/WriterPanelMessage/DeletedMessages';
                     } else {
-                        alert('Mesaj geri alma işlemi başarısız oldu.');
+                        window.location.href = 'https://localhost:44300/WriterPanelMessage/DeletedMessages';
                     }
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
