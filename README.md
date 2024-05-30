@@ -1,5 +1,5 @@
 <h2>
-  This is a blog project where writers register to the system, open topics and comment on existing topics.
+  This is a blog project where writers register to the system, open topics and comment on existing topics, they can send messages to each other and to the admin.
   There is an admin panel also.
 </h2>
 
