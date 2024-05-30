@@ -1,9 +1,9 @@
-<p>
+<h2>
   This is a blog project where writers register to the system, open topics and comment on existing topics.
   There is an admin panel also.
-</p>
+</h2>
 
-#Tools:
+# Tools:
 ## Asp.Net Mvc
 ## EntityFrameworkCore CodeFirst
 ## SQL Server
@@ -15,7 +15,7 @@
 ## jQuery
 ## Bootstrap
 
-#Patterns:
+# Patterns:
 ## N Tier Architecture
 ## GenericRepository
 ## Dependency Injection
