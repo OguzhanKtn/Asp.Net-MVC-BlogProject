@@ -31,7 +31,7 @@ namespace BusinessLayer.Concrete
 
         public List<Content> GetAll()
         {
-            return _contentDal.List();
+          return _contentDal.List();    
         }
 
         public List<Content> GetAllByWriter(int id)
@@ -42,6 +42,18 @@ namespace BusinessLayer.Concrete
         public Content GetByID(int id)
         {
             return _contentDal.Get(x=>x.ContentID == id);
+        }
+
+        public List<Content> GetBySearch(string p)
+        {
+            if (!string.IsNullOrEmpty(p))
+            {
+                return _contentDal.List(x=>x.ContentValue.Contains(p));
+            }
+            else
+            {
+                return _contentDal.List();
+            }
         }
 
         public List<Content> GetListByHeadingID(int id)

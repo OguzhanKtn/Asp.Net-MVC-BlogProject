@@ -15,10 +15,11 @@ namespace MvcProjectCamp.Controllers
             contentManager = new ContentManager(new EfContentDal());
         }
 
-        public ActionResult Index()
+        public ActionResult GetAllContent(string p) 
         {
-
-            return View();
+            var values = contentManager.GetBySearch(p);
+            
+            return View(values);
         }
 
         public ActionResult ContentByHeading(int id) 
