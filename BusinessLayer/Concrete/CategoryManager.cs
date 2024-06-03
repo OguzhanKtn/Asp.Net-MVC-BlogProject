@@ -1,9 +1,11 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.Concrete.Repositories;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,9 +17,12 @@ namespace BusinessLayer.Concrete
 
         ICategoryDal _categoryDal;
 
+        private readonly Context _context;
+
         public CategoryManager(ICategoryDal categoryDal)
         {
             _categoryDal = categoryDal;
+            _context = new Context();
         }
 
         public void CategoryAdd(Category category)
@@ -38,6 +43,11 @@ namespace BusinessLayer.Concrete
         public Category GetByID(int id)
         {
             return _categoryDal.Get(x => x.CategoryID == id);
+        }
+
+        public List<Category> GetCategoriesWithHeadings()
+        {
+            return _context.Categories.Include(x => x.Headings).ToList();
         }
 
         public void Update(Category category)

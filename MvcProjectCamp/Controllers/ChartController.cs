@@ -29,7 +29,7 @@ namespace MvcProjectCamp.Controllers
         public List<CategoryClass> BlogList()
         {
             List<CategoryClass> categoryClasses = new List<CategoryClass>();
-            List<Category> categories = categoryManager.GetAll();
+            List<Category> categories = categoryManager.GetCategoriesWithHeadings();
             foreach (Category category in categories) 
             {
                 categoryClasses.Add(new CategoryClass()
@@ -37,6 +37,7 @@ namespace MvcProjectCamp.Controllers
                     CategoryName = category.CategoryName,
                     CategoryCount = category.Headings.Count,
                 });
+                
             }
           
             return categoryClasses;
