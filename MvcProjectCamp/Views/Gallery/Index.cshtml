@@ -56,13 +56,13 @@
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                @foreach(var item in Model)
+                                @foreach (var item in Model)
                                 {
-                                <div class="col-sm-2">
-                                    <a href="@item.ImagePath" data-toggle="lightbox" data-title="@item.ImageName" data-gallery="gallery">
-                                        <img src="@item.ImagePath" class="img-fluid mb-2" alt="white sample" style="width:200px;height:150px" />
-                                    </a>
-                                </div>
+                                    <div class="col-sm-2">
+                                        <a href="@item.ImagePath" data-toggle="lightbox" data-title="@item.ImageName" data-gallery="gallery">
+                                            <img src="@item.ImagePath" class="img-fluid mb-2" alt="white sample" style="width:200px;height:150px" />
+                                        </a>
+                                    </div>
                                 }
                             </div>
                         </div>
@@ -85,29 +85,32 @@
     <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- jQuery UI -->
     <script src="~/AdminLTE-3.0.4/plugins/jquery-ui/jquery-ui.min.js"></script>
-    <!-- Ekko Lightbox -->
-    <script src="~/AdminLTE-3.0.4/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
+    <!-- Ekko Lightbox
+            <script src="~/AdminLTE-3.0.4/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
+        -->
     <!-- AdminLTE App -->
     <script src="~/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
     <!-- Filterizr-->
     <script src="~/AdminLTE-3.0.4/plugins/filterizr/jquery.filterizr.min.js"></script>
     <!-- Page specific script -->
     <script>
-$(function () {
-    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-      event.preventDefault();
-      $(this).ekkoLightbox({
-        alwaysShowClose: true
-      });
-    });
+        $(function () {
+            $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+                event.preventDefault();
+                $(this).ekkoLightbox({
+                    alwaysShowClose: true
+                });
+            });
 
-    $('.filter-container').filterizr({gutterPixels: 3});
-    $('.btn[data-filter]').on('click', function() {
-      $('.btn[data-filter]').removeClass('active');
-      $(this).addClass('active');
-    });
-  })</script>
+            $('.filter-container').filterizr({ gutterPixels: 3 });
+            $('.btn[data-filter]').on('click', function () {
+                $('.btn[data-filter]').removeClass('active');
+                $(this).addClass('active');
+            });
+        })</script>
 </body>
 </html>
