@@ -1,17 +1,22 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 
 namespace BusinessLayer.Concrete
 {
     public class HeadingManager : IHeadingService
     {
         IHeadingDal _headingDal;
+        private readonly Context _context;
         public HeadingManager(IHeadingDal headingDal)
         {
             _headingDal = headingDal;
+            _context = new Context();
         }
 
         public void Add(Heading heading)
@@ -32,6 +37,11 @@ namespace BusinessLayer.Concrete
         public Heading GetByID(int id)
         {
             return _headingDal.Get(x => x.HeadingID == id);
+        }
+
+        public List<Heading> GetHeadingsWithContents()
+        {
+            return _context.Headings.Include(x=>x.Contents).ToList();   
         }
 
         public List<Heading> GetListByWriter(int id)

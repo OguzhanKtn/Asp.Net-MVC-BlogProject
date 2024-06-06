@@ -21,7 +21,7 @@ namespace MvcProjectCamp.Controllers
 
         public ActionResult Headings()
         {
-            var headingList = hm.GetAll();
+            var headingList = hm.GetHeadingsWithContents();
             return View(headingList);
         }
         public PartialViewResult Index(int id = 0)
