@@ -13,6 +13,7 @@
             <th>UserName</th>
             <th>Password</th>
             <th>Role</th>
+            <th>Edit</th>
         </thead>
         <tbody>
             @foreach(var item in Model)
@@ -21,6 +22,9 @@
                     <td>@item.AdminUserName</td>
                     <td>@item.AdminPassword</td>
                     <td>@item.AdminRole</td>
+                    <td>
+                        <a href="/Authorization/EditAdmin/@item.AdminID" type="button" class="btn btn-warning">Edit</a>
+                    </td>
                 </tr>
             }
         </tbody>

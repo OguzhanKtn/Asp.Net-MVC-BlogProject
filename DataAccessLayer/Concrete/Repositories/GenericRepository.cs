@@ -50,9 +50,9 @@ namespace DataAccessLayer.Concrete.Repositories
 
         public void Update(T p)
         {
-            var addedEntity = db.Entry(p);
-            addedEntity.State = EntityState.Modified;
-            db.SaveChanges();
+           var addedEntity = db.Entry(p);
+           addedEntity.State = EntityState.Modified;
+           db.SaveChanges();
         }
     }
 }

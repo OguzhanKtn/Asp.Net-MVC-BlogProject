@@ -19,6 +19,7 @@ namespace BusinessLayer.Concrete
 
         public void Add(Admin admin)
         {
+            
             _adminDal.Insert(admin);
         }
 

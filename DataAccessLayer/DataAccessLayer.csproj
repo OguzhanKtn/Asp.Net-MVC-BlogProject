@@ -214,6 +214,10 @@
     <Compile Include="Migrations\202405171103396_messageIsDeletedColumn.designer.cs">
       <DependentUpon>202405171103396_messageIsDeletedColumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202406081738072_passwordLength.cs" />
+    <Compile Include="Migrations\202406081738072_passwordLength.designer.cs">
+      <DependentUpon>202406081738072_passwordLength.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -278,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202405171103396_messageIsDeletedColumn.resx">
       <DependentUpon>202405171103396_messageIsDeletedColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406081738072_passwordLength.resx">
+      <DependentUpon>202406081738072_passwordLength.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
