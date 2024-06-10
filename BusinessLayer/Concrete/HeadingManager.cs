@@ -55,13 +55,7 @@ namespace BusinessLayer.Concrete
 
             _heading.UpdatedDate = DateTime.Now;
             _heading.HeadingName = heading.HeadingName;
-            _heading.HeadingStatus = heading.HeadingStatus;
-            _heading.Category = heading.Category;
             _heading.CategoryID = heading.CategoryID;
-            _heading.Contents = heading.Contents;
-            _heading.Writer = heading.Writer;
-            _heading.WriterID = heading.WriterID;
-
             _headingDal.Update(_heading);
         }
     }
