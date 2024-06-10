@@ -19,3 +19,16 @@
 ### - N Tier Architecture
 ### - GenericRepository
 ### - Dependency Injection
+
+# Display Images : 
+<p>
+  <img src="https://github.com/OguzhanKtn/Asp.Net-MVC-BlogProject/blob/main/ProjectPhotos/Admin1.JPG" width="200">
+  <img src="https://github.com/OguzhanKtn/Asp.Net-MVC-BlogProject/blob/main/ProjectPhotos/Admin2.JPG" width="200">
+  <img src="https://github.com/OguzhanKtn/Asp.Net-MVC-BlogProject/blob/main/ProjectPhotos/Admin3.JPG" width="200">
+  <img src="https://github.com/OguzhanKtn/Asp.Net-MVC-BlogProject/blob/main/ProjectPhotos/Admin4.JPG" width="200">
+  <img src="https://github.com/OguzhanKtn/Asp.Net-MVC-BlogProject/blob/main/ProjectPhotos/Admin5.JPG" width="200">
+  <img src="https://github.com/OguzhanKtn/Asp.Net-MVC-BlogProject/blob/main/ProjectPhotos/AdminLogin.JPG width="200">
+  <img src="https://github.com/OguzhanKtn/Asp.Net-MVC-BlogProject/blob/main/ProjectPhotos/Default.JPG" width="200">
+  <img src="https://github.com/OguzhanKtn/Asp.Net-MVC-BlogProject/blob/main/ProjectPhotos/WriterLogin.JPG" width="200">
+  <img src="https://github.com/OguzhanKtn/Asp.Net-MVC-BlogProject/blob/main/ProjectPhotos/WriterProfile.JPG" width="200">
+</p>
