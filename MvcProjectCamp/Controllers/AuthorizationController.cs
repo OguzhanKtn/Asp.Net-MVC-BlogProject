@@ -14,6 +14,7 @@ using System.Web.Mvc;
 
 namespace MvcProjectCamp.Controllers
 {
+    [Authorize(Roles = "A")]
     public class AuthorizationController : Controller
     {
         AdminManager adminManager;

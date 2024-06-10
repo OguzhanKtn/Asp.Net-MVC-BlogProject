@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace MvcProjectCamp.Controllers
 {
+    [Authorize(Roles = "A")]
     public class ChartController : Controller
     {
         CategoryManager categoryManager;

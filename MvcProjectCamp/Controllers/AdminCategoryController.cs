@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace MvcProjectCamp.Controllers
 {
+    [Authorize(Roles = "A")]
     public class AdminCategoryController : Controller
     {
         CategoryManager categoryManager;
@@ -18,8 +19,7 @@ namespace MvcProjectCamp.Controllers
             categoryManager = new CategoryManager(new EfCategoryDal());
             headingManager = new HeadingManager(new EfHeadingDal());
         }
-
-        [Authorize(Roles = "A")]
+     
         public ActionResult Index()
         {
             var categories = categoryManager.GetAll();

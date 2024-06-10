@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace MvcProjectCamp.Controllers
 {
+    [Authorize(Roles = "A")]
     public class GalleryController : Controller
     {
         ImageManager imageManager;

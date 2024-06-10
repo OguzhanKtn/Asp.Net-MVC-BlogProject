@@ -31,9 +31,10 @@ namespace MvcProjectCamp.Controllers
         [HttpPost]
         public ActionResult AdminLogin(Admin p)
         {
+            var hashPassword = PasswordHasher.HashPassword(p.AdminPassword);
             List<Admin> admins = adminManager.GetAll();
 
-            var adminUser = admins.FirstOrDefault(x => x.AdminUserName.Equals(p.AdminUserName) && x.AdminPassword.Equals(p.AdminPassword));
+            var adminUser = admins.FirstOrDefault(x => x.AdminUserName.Equals(p.AdminUserName) && x.AdminPassword.Equals(hashPassword));
 
             if (adminUser != null) 
             {

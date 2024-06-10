@@ -250,6 +250,7 @@
     <Content Include="AdminLTE-3.0.4\dist\js\pages\dashboard2.js" />
     <Content Include="AdminLTE-3.0.4\dist\js\pages\dashboard3.js" />
     <Content Include="AdminLTE-3.0.4\docs\404.html" />
+    <Content Include="AdminLTE-3.0.4\docs\Admin5.JPG" />
     <Content Include="AdminLTE-3.0.4\docs\assets\css\adminlte.css" />
     <Content Include="AdminLTE-3.0.4\docs\assets\css\adminlte.min.css" />
     <Content Include="AdminLTE-3.0.4\docs\assets\css\alt\adminlte.components.css" />
@@ -333,6 +334,15 @@
     <Content Include="AdminLTE-3.0.4\docs\_layouts\home.html" />
     <Content Include="AdminLTE-3.0.4\docs\_layouts\page.html" />
     <Content Include="AdminLTE-3.0.4\docs\_layouts\post.html" />
+    <Content Include="AdminLTE-3.0.4\images\Admin1.JPG" />
+    <Content Include="AdminLTE-3.0.4\images\Admin2.JPG" />
+    <Content Include="AdminLTE-3.0.4\images\Admin3.JPG" />
+    <Content Include="AdminLTE-3.0.4\images\Admin4.JPG" />
+    <Content Include="AdminLTE-3.0.4\images\Admin5.JPG" />
+    <Content Include="AdminLTE-3.0.4\images\AdminLogin.JPG" />
+    <Content Include="AdminLTE-3.0.4\images\Default.JPG" />
+    <Content Include="AdminLTE-3.0.4\images\WriterLogin.JPG" />
+    <Content Include="AdminLTE-3.0.4\images\WriterProfile.JPG" />
     <Content Include="AdminLTE-3.0.4\index.html" />
     <Content Include="AdminLTE-3.0.4\index2.html" />
     <Content Include="AdminLTE-3.0.4\index3.html" />

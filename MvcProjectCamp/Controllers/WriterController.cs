@@ -8,6 +8,7 @@ using MvcProjectCamp.Core;
 
 namespace MvcProjectCamp.Controllers
 {
+    [Authorize(Roles = "A")]
     public class WriterController : Controller
     {
         WriterManager writerManager;
